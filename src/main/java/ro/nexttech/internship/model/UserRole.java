@@ -1,4 +1,4 @@
-package ro.nexttech.internship.user.model;
+package ro.nexttech.internship.model;
 
 public enum UserRole {
     ADMIN,

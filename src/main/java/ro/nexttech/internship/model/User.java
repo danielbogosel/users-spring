@@ -1,7 +1,8 @@
-package ro.nexttech.internship.user.model;
+package ro.nexttech.internship.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.NonNull;
 import lombok.Setter;
 
 import javax.persistence.*;
@@ -15,6 +16,7 @@ public class User {
     @Id
     @GeneratedValue
     @Column(name = "user_id")
+    @NonNull
     private int id;
 
     @Column(name = "username")
@@ -31,4 +33,5 @@ public class User {
 
     @Column(name = "company_id")
     private int companyId;
+
 }

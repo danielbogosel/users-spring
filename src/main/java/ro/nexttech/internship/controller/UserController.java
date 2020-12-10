@@ -1,8 +1,9 @@
-package ro.nexttech.internship.user.controller;
+package ro.nexttech.internship.controller;
 
 import org.springframework.web.bind.annotation.*;
-import ro.nexttech.internship.user.model.User;
-import ro.nexttech.internship.user.service.UserService;
+import ro.nexttech.internship.service.UserService;
+import ro.nexttech.internship.model.User;
+import ro.nexttech.internship.model.UserDto;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,27 +18,27 @@ public class UserController {
     }
 
     @GetMapping
-    List<User> getAllUsers() {
+    List<UserDto> getAllUsers() {
         return userService.getAllUsers();
     }
 
     @PostMapping
-    List<User> addUser(@RequestBody User user) {
-        return userService.createUser(user);
+    UserDto addUser(@RequestBody UserDto userDto) {
+        return userService.createUser(userDto);
     }
 
     @GetMapping("/{id}")
-    Optional<User> getUserById(@PathVariable int id) {
+    Optional<UserDto> getUserById(@PathVariable int id) {
         return userService.getUserById(id);
     }
 
     @PutMapping("/{id}")
     User updateUser(@PathVariable int id, @RequestBody User user) {
-        return userService.updateUser(id,user);
+        return userService.updateUser(id, user);
     }
 
     @DeleteMapping("/{id}")
-    User deleteUser(@PathVariable int id) {
+    UserDto deleteUser(@PathVariable int id) {
         return userService.deleteUser(id);
     }
 
